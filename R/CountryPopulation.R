@@ -21,9 +21,9 @@ CountryPopulation <- function(x){
   y <- WorldPopulation %>%
     filter(Country == x) %>%
     group_by(Country) %>%
-    ggplot(aes(x = Year, y = Population, color = Country)) +
+    ggplot(aes(x = Year, y = Population)) +
     geom_line() +
     labs(title = paste("Population over time for",x)) +
-    theme(legend.position='bottom')
+    theme(plot.title= element_text(size = 9))
   return(y)
 }
